@@ -7,3 +7,6 @@
 
 ## When requesting `http://127.0.0.1:8000/about/`, it should return  :
 - `A simple paragraph about Car Rentals. `
+
+## When requesting `http://127.0.0.1:8000/password/generate/`, it should return a randomly generated password of length 10 characters (letters, upper, lower, symbols)  :
+- `e$dkjf@mA2`
