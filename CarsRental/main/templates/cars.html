@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars - Car Rentals</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #e6f2ff;
+            color: #004080;
+            text-align: center;
+            padding: 50px;
+        }
+        .car {
+            border: 1px solid #004080;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+        .car img {
+            max-width: 150px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Our Cars</h3>
+    {% for car in cars %}
+        <div class="car">
+            <img src="{{ car.image_url }}" alt="{{ car.name }}">
+            <div>
+                <h4>{{ car.name }}</h4>
+                <p>{{ car.info }}</p>
+                <p>Rent Price: {{ car.price }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    <a href="{% url 'main:home' %}" class="button">Back</a>
+</body>
+</html>

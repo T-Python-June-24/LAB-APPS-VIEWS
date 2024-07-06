@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Car Rentals</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #e6f2ff;
+            color: #004080;
+            text-align: center;
+            padding: 50px;
+        }
+        .button {
+            background-color: #004080;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World, This is my new HOME for Car Rentals Website! We're excited to welcome you here.</h1>
+    <a href="{% url 'main:about' %}" class="button">About</a>
+    <a href="{% url 'main:contact' %}" class="button">Contact Us</a>
+    <a href="{% url 'main:password' %}" class="button">Generate Password</a>
+    <a href="{% url 'main:cars' %}" class="button">Cars</a>
+</body>
+</html>

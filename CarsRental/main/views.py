@@ -6,19 +6,24 @@ import string
 # Create your views here. 
 
 def page_view(request: HttpRequest):
-    content = "Hello World, This is my new HOME for Car Rentals Website! We're excited to welcome you here."
-    return HttpResponse(content)
+    return render(request, 'home.html')
 
 def about_view(request: HttpRequest):
-    content = '''<h3>A simple paragraph about Car Rentals:</h3>
-    Car rentals offer a convenient and flexible transportation option for travelers and individuals in need of a temporary vehicle. 
-    Whether for a business trip, vacation, or while a personal car is being repaired, rental services provide access to a wide range of vehicles to suit various needs and preferences. 
-    Customers can choose from economy cars for cost-effective travel, luxury vehicles for special occasions, or larger vehicles like SUVs and vans for family trips and group travel. 
-    With options for short-term and long-term rentals, car rental companies cater to diverse requirements, ensuring mobility and convenience wherever one needs to go.
-    '''
-    return HttpResponse(content)
+    return render(request, 'about.html')
+
+def contact_view(request: HttpRequest):
+    return render(request, 'contact.html')
 
 def password_view(request: HttpRequest):
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(random.choice(characters) for _ in range(10))
-    return HttpResponse(password)
+    return render(request, 'password.html', {'password': password})
+
+def cars_view(request: HttpRequest):
+    cars = [
+        {'name': 'BMW 420i', 'info': 'Model: 2024', 'price': '850 SR/day', 'image_url': '/static/images/BMW 420i.jpg'},
+        {'name': 'Genesis GV80', 'info': 'Model: 2022', 'price': '550 SR/day', 'image_url': '/static/images/Genesis GV80.jpg'},
+        {'name': 'Ford Taurus', 'info': 'Model: 2024', 'price': '400 SR/day', 'image_url': '/static/images/Ford Taurus.jpg'},
+        {'name': 'Audi Q8', 'info': 'Model: 2023', 'price': '700 SR/day', 'image_url': '/static/images/Audi Q8.jpg'},
+    ]
+    return render(request, 'cars.html', {'cars': cars})
