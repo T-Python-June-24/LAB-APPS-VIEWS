@@ -58,10 +58,10 @@
                             <ul class="mx-auto inline-flex gap-6 text-sm font-light">
                                 <li>
                                     <a class="font-bold relative after:h-px after:content-[''] after:w-full after:absolute after:top-full after:bg-accent-500 after:left-0 after:translate-y-1"
-                                        href="">طرق التواصل</a>
+                                        href="{% url 'abdullahApp:process_csv_data' %}">طرق التواصل</a>
                                 </li>
-                                <li><a href="">ليش بتكون حياتك اسهل؟؟</a></li>
-                                <li><a href="">الخطط</a></li>
+                                <li><a href="{% url 'abdullahApp:run_agent' %}">ليش بتكون حياتك اسهل؟؟</a></li>
+                                <li><a href="{% url 'abdullahApp:process_csv_data' %}">الخطط</a></li>
                             </ul>
                             <ul class="absolute right-0">
                                 <li class="relative">
@@ -94,10 +94,10 @@
                                     class="inline-block text-base font-medium px-12 py-2 bg-accent-400 rounded-lg cursor-pointer">
                                     هيا بنا لتجربة مختلفة
                                 </a>
-                                <button
+                                <a href="{% url 'abdullahApp:contact' %}"
                                     class="inline-block text-base font-medium px-12 py-2 border border-accent-400 rounded-lg text-accent-400 cursor-pointer bg-gray-50/10 backdrop-blur-3xl">
                                     من نحن؟؟
-                                </button>
+                            </a>
                             </div>
                         </div>
                         <div class="md:absolute md:right-0 md:bottom-32 text-gray-50 my-16">

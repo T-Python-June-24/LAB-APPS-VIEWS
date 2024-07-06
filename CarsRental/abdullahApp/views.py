@@ -1,9 +1,10 @@
 import io
 import os
 import random
+import json
 import string
 from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest
+from django.http import HttpResponse, HttpRequest,JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from fpdf import FPDF
 import pandas as pd
@@ -11,15 +12,16 @@ from langchain.schema import HumanMessage, SystemMessage
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
-
+from django.shortcuts import render 
+from django.http import JsonResponse 
 
 # Load environment variables from .env file
 load_dotenv()
+# openai.api_key = 'YOUR_API_KEY'
 
 openai_key = os.getenv("OPENAI_API_KEY")
 llm_name = "gpt-3.5-turbo"
 model = ChatOpenAI(api_key=openai_key, model=llm_name)
-
 
 @csrf_exempt
 def process_csv_data(request: HttpRequest):
@@ -39,6 +41,7 @@ def process_csv_data(request: HttpRequest):
     """
     if request.method == 'POST':
         file = request.FILES['file']
+        question = request.POST['question']
         file_extension = file.name.split('.')[-1]
         
         if file_extension == 'csv':
@@ -57,7 +60,7 @@ def process_csv_data(request: HttpRequest):
             verbose=True,
         )
 
-        # Define the question and prompt for the agent
+        # Define the prompt for the agent
         CSV_PROMPT_PREFIX = """
         First set the pandas display options to show all the columns,
         get the column names, then answer the question.
@@ -82,10 +85,9 @@ def process_csv_data(request: HttpRequest):
         In the explanation, mention the column names that you used to get
         to the final answer.
         """
-        QUESTION = "Which grade has the highest average base salary, and compare the average female pay vs male pay?"
 
         # Invoke the agent to get the result
-        res = agent.invoke(CSV_PROMPT_PREFIX + QUESTION + CSV_PROMPT_SUFFIX)
+        res = agent.invoke(CSV_PROMPT_PREFIX + question + CSV_PROMPT_SUFFIX)
         result = res['output']
 
         # Generate PDF report
@@ -123,3 +125,52 @@ def aboutPage(request):
 def passwordPage(request):
     password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=10))
     return HttpResponse(password)
+
+
+def contactPage(request):
+    return render(request, 'how_are_we.html')
+
+
+def chatgpt(request):
+    return render(request, 'chatboot.html')
+
+
+
+messages = [
+    SystemMessage(
+        content='''
+        
+You are a helpful assistant named Abdullah who is extremely competent as a Data Scientist. 
+You are knowledgeable about various aspects of data science, computer science history,
+algorithms, and more. When interacting with users, provide accurate,
+detailed, and contextually relevant information. Be concise yet thorough, ensuring clarity in your explanations.
+Offer additional insights or related information when appropriate to enhance the user's understanding. 
+Your goal is to assist users in the best possible way by leveraging your expertise in data science and computer science history.        
+        '''
+    ),
+    HumanMessage(content="who was the very first computer scientist?"),
+]
+
+
+# res = model.invoke(messages)
+# print(res)
+
+
+def first_agent(messages):
+    res = model.invoke(messages)
+    return res
+
+
+@csrf_exempt
+def run_agent(request: HttpRequest):
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        user_input = body.get('message', '')
+
+        messages = [HumanMessage(content=user_input)]
+        response = first_agent(messages)
+        return JsonResponse({"response": response.content})
+    
+    # Render the 'chatboot.html' template if the request method is not POST
+    return render(request, 'chatboot.html')
+
