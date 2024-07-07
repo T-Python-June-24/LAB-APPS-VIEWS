@@ -1,0 +1,60 @@
+{% load static %}
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #f6d365, #fda085);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 600px;
+      }
+      h1 {
+        color: #2c3e50;
+      }
+      p {
+        color: #34495e;
+        line-height: 1.6;
+      }
+      .nav {
+        margin-top: 20px;
+      }
+      .nav a {
+        margin: 0 10px;
+        color: #3498db;
+        text-decoration: none;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="{% static 'logo.png' %}" alt="logo" />
+      <h1>About Car Rentals</h1>
+      <p>
+        Welcome to our Car Rental service. We offer a wide range of vehicles to
+        suit your needs, from compact cars for city driving to spacious SUVs for
+        family trips. Our mission is to provide reliable, affordable, and
+        convenient car rental solutions to make your journey smooth and
+        enjoyable.
+      </p>
+      <div class="nav">
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'password_generate' %}">Generate Password</a>
+      </div>
+    </div>
+  </body>
+</html>
