@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widyh=device-width , initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        p{
+            font-size: 1.5rem;
+        }
+        img{
+            width: 20rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <br/>
+        <a href="{ % url 'main:password_generate' %}">password_generate</a>
+        <br/>
+        <a href="{% url 'main:about_page'%}">about</a>
+    
+       <h1>{{ Welcome }}</h1>
+    </nav>
+    
+    <img src="/static/images/car image.jpeg"/>
+    <h1>About CarRental:</h1>
+    <p>{{ about }} </p>
+
+</body>
+
+</html>
