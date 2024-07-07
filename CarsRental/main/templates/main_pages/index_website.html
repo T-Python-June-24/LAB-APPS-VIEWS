@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wolcome </title>
+    <style>
+        h1{
+            color:brown;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        a{
+            text-decoration: none;
+            font-size: 2rem;
+            margin-left: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'main:about' %}">About us</a>
+        <a href="{% url 'main:password_generate' %}"> password generator</a>
+        <a href="{% url 'main:index_website' %}"> index</a>
+
+        
+    </nav>
+
+    <h1>{{ wolcome }}</h1>
+
+
+    
+</body>
+</html>
