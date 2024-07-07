@@ -10,7 +10,7 @@ def index_website(Http_RQ:HttpRequest):
 def about(Http_RQ:HttpRequest):
     return HttpResponse("<center><h1 style= color:blue>A simple paragraph about Car Rentals. </h1></center>")
 def password_generate(Http_RQ:HttpRequest):
-    sentence = string.ascii_letters + string.digits  
+    sentence = string.ascii_letters + string.digits + string.punctuation
     Complete_sentence = ''.join(random.choice(sentence) for _ in range(10))
     editsentence=f"<center><h1 style= color:blue>{Complete_sentence}</h1></center>"
     return HttpResponse(editsentence)
