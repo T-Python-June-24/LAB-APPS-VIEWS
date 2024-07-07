@@ -10,3 +10,12 @@
 
 ## When requesting `http://127.0.0.1:8000/password/generate/`, it should return a randomly generated password of length 10 characters (letters, upper, lower, symbols)  :
 - `e$dkjf@mA2`
+
+
+##LAB for Templates / Resolving URLs / Static Files :
+Using your previous  LAB-APPS-VIEWS:
+Use templates to render the pages.
+Link to your pages (about page and password generator page)   at the top of the home page (use dynamic links).
+Display an image in the about us page (choose any image & use static files).
+
+after you finish, sync your chagens and create a pull request.
