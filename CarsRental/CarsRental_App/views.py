@@ -7,9 +7,11 @@ def home_view(request : HttpRequest):
     content = "<h1>Hello World, This is my new HOME for Car Rentals Website  ! we're excited to welcome you here.</h1>"
     return HttpResponse(content)
 
-def about_view(request:HttpRequest):
-    content = "A simple paragraph about Car Rentals."
-    return HttpResponse(content)
+def about_view(request: HttpRequest):
+
+    return render(request, "CarsRental/about.html")
+
+
 
 def pwGenerator_view(request:HttpRequest):
     length = 10
