@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,7 +78,8 @@
             <section class="h-dvh w-dvw max-h-[80rem] relative">
                 <div class="absolute inset-0 z-[1]">
                     <img class="h-full w-full object-cover object-center"
-                        src="https://github.com/Gederooney/modern-gym-landing/blob/master/bg.png?raw=true" alt="" />
+                     src="{% static '/images/bacground.png' %}" alt="">
+      
                 </div>
                 <div class="max-w-[120rem] mx-auto h-full relative z-[2] px-6 md:px-8 lg:px-10">
                     <div class="h-full w-full flex flex-col relative space-y-6">

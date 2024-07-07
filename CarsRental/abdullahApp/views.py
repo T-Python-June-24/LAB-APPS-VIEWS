@@ -138,10 +138,6 @@ messages = [
 ]
 
 
-# res = model.invoke(messages)
-# print(res)
-
-
 def first_agent(messages):
     res = model.invoke(messages)
     return res
