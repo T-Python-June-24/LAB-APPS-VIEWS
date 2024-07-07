@@ -116,21 +116,6 @@ def process_csv_data(request: HttpRequest):
 
 
 
-def homePage(request):
-    return render(request, 'home.html')
-
-def aboutPage(request):
-    return render(request, 'about.html')
-
-def passwordPage(request):
-    password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=10))
-    return HttpResponse(password)
-
-
-def contactPage(request):
-    return render(request, 'how_are_we.html')
-
-
 def chatgpt(request):
     return render(request, 'chatboot.html')
 
@@ -173,4 +158,35 @@ def run_agent(request: HttpRequest):
     
     # Render the 'chatboot.html' template if the request method is not POST
     return render(request, 'chatboot.html')
+
+
+
+
+def Test(request):
+    
+    
+    abdullah_list = {"title:": "Abdullah's Page", "content: ": "This is a test page for Abdullah.", "author: ": "Abdullah",
+                     "title:": "ahemd's Page", "content: ": "This is a test page for ahmed.", "author: ": "ahmed",
+                     "title:": "MOHAMED's Page", "content: ": "This is a test page for MOHAMED.", "author: ": "MOHAMED",
+                     }
+    
+    test = "This is a test page for Abdullah."
+    return render(request, 'abdullahApp/testAbdullah.html',context={"abdullah_list":abdullah_list, "test" : test,})
+
+
+
+
+def homePage(request):
+    return render(request, 'home.html')
+
+def aboutPage(request):
+    return render(request, 'about.html')
+
+def passwordPage(request):
+    password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=10))
+    return HttpResponse(password)
+
+
+def contactPage(request):
+    return render(request, 'how_are_we.html')
 
