@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +9,6 @@
   </head>
   <style>
     body {
-        background-image: url("/static/images/background.png");
         background-size: cover;
         text-align: center;
         font-family: Arial, sans-serif;
@@ -35,7 +36,9 @@
     }
 </style>
   <body>
-    <img src="/static/images/bacground.png" alt="">
+    <!-- <img src="/static/images/bacground.png" alt=""> -->
+    <img src="{% static '/images/bacground.png' %}" alt="">
+
     <h1>Welcome To About Page</h1>
     <a href="{% url 'abdullahApp:password_generate' %}"
     class="inline-block text-base font-medium px-12 py-2 bg-accent-400 rounded-lg cursor-pointer">
