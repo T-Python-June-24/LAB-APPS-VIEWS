@@ -10,8 +10,8 @@ def password_view(request:HttpRequest)->HttpResponse:
     upperCaseLetters:str=string.ascii_uppercase
     lowerCaseLetters:str=string.ascii_lowercase
     symbols:str=string.punctuation
-    digits:str=string.digits
-    upper:str=lower=dig=sym=True
+    digits:int=string.digits
+    upper=lower=dig=sym=True
     all="" #where all string , symbole and digit will be concnate
     if upper:
         all+=upperCaseLetters
