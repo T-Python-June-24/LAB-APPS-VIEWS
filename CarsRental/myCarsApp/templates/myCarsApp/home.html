@@ -1,0 +1,186 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Box on Sky Background</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Sky Blue background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            font-family: Arial, sans-serif;
+        }
+        .white-box {
+            background-color: #fff; /* White box background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+            max-width: 80%; /* Optional: Limits the width of the box */
+            text-align: center;
+        }
+        .topPage {
+            background-color: #fff; /* White box background */
+            padding: 20px;
+            justify-content: left;
+            align-items: left;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+            max-width: 100%; /* Optional: Limits the width of the box */
+            text-align: left;
+            margin: 0 20px;
+            color: #3498db;
+            text-decoration: none;
+    
+        .nav a {
+            margin: 0 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .h1 {
+            color: #1687A7;
+        }
+    </style>
+</head>
+<body>
+    <div class="topPage">
+        <a href="/about/">Dynamic link to about page</a>
+        <br>
+        <a href="/password/generate/">Dynamic link to password generator page</a>
+    </div>
+    <div class="white-box">
+        <h1>Hello World,</h1>
+        <p>This is our new HOME for Car Rentals Website! We're excited to welcome you here.</p>
+        
+        <div class="nav">
+            <a href="/about">About</a>
+            <a href="/password/generate/">Password</a>
+        </div>
+    </div>
+    
+</body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Box on Sky Background</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Sky Blue background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            font-family: Arial, sans-serif;
+        }
+        .white-box {
+            background-color: #fff; /* White box background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+            max-width: 80%; /* Optional: Limits the width of the box */
+            text-align: center;
+        }
+        .nav a {
+                margin: 0 10px;
+                color: #3498db;
+                text-decoration: none;
+            }
+        .h1{
+        color:#1687A7
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'myCarsApp:about_view' %}"> Dynamic link to about page</a>
+    <br>
+    <a href=" {% url 'myCarsApp:generate_password' %}">Dynamic link to password genertor page</a>
+    <br>
+    <div class="white-box">
+        <h1>Hello World,</h1>
+        <p>This is our new HOME for Car Rentals Website! We're excited to welcome you here.</p>
+                 <div class="nav">
+                <a href="/about">About</a>
+                <a href="/password/generate/">Password</a>
+                </div>
+    </div>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Box on Sky Background</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Sky Blue background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            font-family: Arial, sans-serif;
+        }
+        .white-box {
+            background-color: #fff; /* White box background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+            max-width: 80%; /* Optional: Limits the width of the box */
+            text-align: center;
+        }
+        .nav a {
+            margin: 0 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .dylink a {
+            margin: 0 20px;
+            color: #1696d1;
+            text-decoration: none;
+        }
+        .h1 {
+            color: #1687A7;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #fff; padding: 10px;">
+        <!-- Dynamic links moved to the top -->
+        <div class="dylink">
+            <a href="/about/">Dynamic link to about page</a>
+            <br>
+            <a href="/password/generate/">Dynamic link to password generator page</a>
+        </div>
+    </div>
+    
+    <div class="white-box">
+        <h1>Hello World,</h1>
+        <p>This is our new HOME for Car Rentals Website! We're excited to welcome you here.</p>
+        
+        <div class="nav">
+            <a href="/about">About</a>
+            <a href="/password/generate/">Password</a>
+        </div>
+    </div>
+    
+</body>
+</html>
