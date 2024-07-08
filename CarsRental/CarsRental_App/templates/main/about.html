@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +25,8 @@
       <section>
         <h2>About us</h2>
         <p>This is the about us section of the webpage.</p>
+        <img src="/static/images/image.jpeg"/>
+        <img src="{% static 'images/image.jpeg' %}"/>
         <p>Today Date is {{date_time}}.</p>
       </section>
     </main>
