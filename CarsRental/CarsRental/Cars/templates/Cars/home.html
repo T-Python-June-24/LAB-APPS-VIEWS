@@ -9,8 +9,9 @@
     <h1> <center> Hello World </center> </h1> 
     <p><center> Hello World, <br><br> This is my new HOME for Car Rentals Website  ! <br><br> We're excited to welcome you here. </center></p>
 
-    <a href="{%url 'Cars:about'%}">Dynamic Link to about us</a>
-    <a href="{%url 'Cars:generate_password'%}">Dynamic Link to generate password</a>
+    <center><a href="{% url 'Cars:about' %}">Dynamic Link to about us</a></center>
+    <br>
+    <center><a href="{% url 'Cars:generate_password' %}">Dynamic Link to generate password</a></center>
 
 </body>
 </html>
