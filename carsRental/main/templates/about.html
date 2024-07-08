@@ -1,0 +1,16 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us - Car Rentals</title>
+</head>
+<body>
+    <h1>About Car Rentals</h1>
+    <p>A simple paragraph about Car Rentals.</p>
+    <img src="{% static 'images/car.jpeg' %}" alt="Car Image">
+    <nav>
+        <a href="{% url 'main:home' %}">Home</a> | 
+        <a href="{% url 'main:generate_password' %}">Generate Password</a>
+    </nav>
+</body>
+</html>

@@ -7,13 +7,13 @@ import random
 import string
 
 def home(request):
-    return HttpResponse("Hello World, This is my new HOME for Car Rentals Website! we're excited to welcome you here.")
+    return render(request, 'home.html')
 
 def about(request):
-    return HttpResponse("A simple paragraph about Car Rentals.")
+    return render(request, 'about.html')
 
 def generate_password(request):
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(random.choice(characters) for i in range(10))
-    return HttpResponse(password)
+    return render(request, 'password.html', {'password' : password})
 
