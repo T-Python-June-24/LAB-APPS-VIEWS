@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <title>Home</title>
 </head>
 <body>
-    <img src="/static/images/Car.jpg">
+    <img src="{% static 'images/Car.jpg' %}" alt="An image of a car rental sign">
     <h1>Hello World, This is my new HOME for Car Rentals Website! We're excited to welcome you here.</h1>
     <a href="{% url 'main:about_view' %}">About</a>
     <a href="{% url 'main:generate_password_view' %}">Password Generate</a>
