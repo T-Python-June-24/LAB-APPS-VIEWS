@@ -1,0 +1,9 @@
+
+
+LAB for Templates / Resolving URLs / Static Files :
+Using your previous  LAB-APPS-VIEWS:
+    Use templates to render the pages.
+    Link to your pages (about page and password generator page)   at the top of the home page (use dynamic links).
+    Display an image in the about us page (choose any image & use static files).
+
+after you finish, sync your chagens and create a pull request.
