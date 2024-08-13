@@ -40,12 +40,13 @@
     </style>
 </head>
 <body>
-    <div style="background-color: #fff; padding: 10px;">
+    <div style = "row-gap: 10px; ;">
+    <div style="background-color: #fff; padding: 10px;" class="white-box"   >
         <!-- Dynamic links moved to the top -->
         <div class="dylink">
             <a href="/about/">Dynamic link to about page</a>
             <br>
-            <a href="/password/generate/">Dynamic link to password generator page</a>
+            <a href="{% url 'myCarsApp:generate_password' %}">Dynamic link to password generator page</a>
         </div>
     </div>
     
@@ -54,10 +55,11 @@
         <p>This is our new HOME for Car Rentals Website! We're excited to welcome you here.</p>
         
         <div class="nav">
-            <a href="/about">About</a>
-            <a href="/password/generate/">Password</a>
+            <a href="{% url 'myCarsApp:about_view' %}">About</a>
+            <a href="{% url 'myCarsApp:generate_password' %}">Password</a>
         </div>
     </div>
+</div>
     
 </body>
 </html>
